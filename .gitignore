@@ -1,8 +1,11 @@
-# Sensitive files
-secrets/
-.env*
-*.key
-config/
+# Ignore all local secrets and sensitive data
+secrets/    # Your real .env files and WireGuard configs
+.env*       # Any stray or backup environment variable files
+*.key       # Any stray private or public key files floating around
 
-.DS_Store
-__MACOSX/
+# Ignore system junk
+.DS_Store   # macOS system junk files
+__MACOSX/   # macOS compressed junk folders
+
+# Ignore WireGuard runtime directories (if ever generated)
+config/     # Container runtime folders for WireGuard
