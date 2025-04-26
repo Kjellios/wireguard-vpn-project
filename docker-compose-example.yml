@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  wireguard:
+    container_name: wireguard
+    image: linuxserver/wireguard:latest
+    restart: unless-stopped
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    env_file:
+      - ../secrets/.env-wireguard
+    volumes:
+      - ./config:/config
+      - /lib/modules:/lib/modules
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.ip_forward=1

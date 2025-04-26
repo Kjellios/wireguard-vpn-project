@@ -1,0 +1,8 @@
+# Sensitive files
+secrets/
+.env*
+*.key
+config/
+
+.DS_Store
+__MACOSX/

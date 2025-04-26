@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  duckdns:
+    image: lscr.io/linuxserver/duckdns
+    container_name: duckdns
+    env_file:
+      - ../secrets/.env-duckdns
+    restart: unless-stopped
